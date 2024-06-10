@@ -1,4 +1,5 @@
-import {Weather} from "../store/slices/savedSlice"
+// import weather from "../store/slices/savedSlice"
+
 
 const getDataFrom=()=>{
     const data=localStorage.getItem('saved');

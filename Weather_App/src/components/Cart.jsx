@@ -4,7 +4,7 @@ import getIcon from '../helpers/getIcon';
 import { useAppDispatch } from '../hooks/hooks';
 import { addWeather } from '../store/slices/savedSlice';
 import { HiOutlineExternalLink } from 'react-icons/hi';
-import { IsSaved } from './IsSaved';
+import IsSaved  from './IsSaved';
 
 const Cart = ({ name, index }) => {
   const [weather, setWeather] = useState(null);
@@ -50,7 +50,7 @@ const Cart = ({ name, index }) => {
       </span>
       <div className='flex justify-between'>
         <a
-          className='dark:text-white bg-gray-200 hover:bg-gray-300 text-gray-700 dark:hover:bg-[#0e48c5]
+          className='dark:text-white bg-gray-400 hover:bg-gray-300 text-gray-700 dark:hover:bg-[#0e48c5]
             dark:bg-[#1956db] transition-all focus:ring-2 focus:ring-gray-400 font-medium rounded px-3 lg:px-4 py-1.5 lg:py-2 focus:outline-none text-sm flex items-center'
           target='_blank'
           href={`https://www.google.se/search?q=weather+${weather?.name}`}
@@ -61,7 +61,7 @@ const Cart = ({ name, index }) => {
 
         <button
           className='
-            dark:text-white bg-gray-200 hover:bg-gray-300 text-gray-700 dark:hover:bg-[#0e48c5]
+            dark:text-white bg-gray-400 hover:bg-gray-300 text-gray-700 dark:hover:bg-[#0e48c5]
             dark:bg-[#1956db] transition-all focus:ring-2 focus:ring-gray-400 rounded px-3 lg:px-4 py-1.5 lg:py-2 focus:outline-none text-sm'
           onClick={() => {
             dispatch(addWeather(weather?.name));

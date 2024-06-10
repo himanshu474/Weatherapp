@@ -30,7 +30,7 @@ const snowW = {
 };
 
 const atmosphereW = {
-  atmposphereI: [701, 711, 721, 731, 741, 751, 761, 762, 771, 781],
+  atmosphereI: [701, 711, 721, 731, 741, 751, 761, 762, 771, 781],
   icon: atmosphere,
 };
 

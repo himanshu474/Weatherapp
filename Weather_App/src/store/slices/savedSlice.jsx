@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
-import {getDataFrom} from "../../helpers/getDataFrom"
+import getDataFrom from "../../helpers/getDataFrom"
 
 const initialState={
     savedWeather:getDataFrom(),

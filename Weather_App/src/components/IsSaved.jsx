@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiFillDelete } from 'react-icons/ai';
 import { useAppSelector } from '../hooks/hooks';
-import { WeatherResponse } from '../types';
+// import { WeatherResponse } from '../types';
 import { RiPlayListAddLine } from 'react-icons/ri';
 
 const IsSaved = ({ weather }) => {

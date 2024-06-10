@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
-import {getWeather} from "../../async/getWeather"
+import getWeather from "../../async/getWeather"
 
 const initialState = {
     status: null,

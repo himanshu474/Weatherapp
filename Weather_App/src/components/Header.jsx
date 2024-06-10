@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import icon from '.././assets/icons/icon.svg';
+import icon from '../assets/icons/icon.png';
 import { SlSocialGithub } from 'react-icons/sl';
 import { TbSun, TbSunOff } from 'react-icons/tb';
 import { FaHome } from 'react-icons/fa';
@@ -7,7 +7,7 @@ import { VscLibrary } from 'react-icons/vsc';
 import Modal from './Modal';
 import { NavLink, useLocation } from 'react-router-dom';
 import { RiContactsFill } from 'react-icons/ri';
-import { CustomLink } from './CustomLink';
+import CustomLink  from './CustomLink';
 
 const Header = ({ theme, setTheme }) => {
   const [burger, setBurger] = useState(false);

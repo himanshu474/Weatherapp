@@ -49,7 +49,7 @@ const Header = ({ theme, setTheme }) => {
           <div className='flex items-center gap-4'>
             <div className='flex space-x-3'>
               <button>
-                <a href='https://github.com/himanshu474' target='_blank'>
+                <a href='https://github.com/himanshu474/Weatherapp' target='_blank'>
                   <SlSocialGithub
                     className='h-5 w-6
         transition-all dark:text-gray-400 text-gray-700 hover:text-gray-900 dark:hover:text-gray-100 cursor-pointer'

@@ -50,7 +50,7 @@ const Modal = ({ isVisible, setVisible, theme }) => {
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className='dark:bg-[#374151] bg-gray-50 border-b-2 border-gray-400 text-md w-full p-2.5 placeholder-gray-400 text-black dark:text-white text-sm mb-5 font-medium outline-none'
-            placeholder='&#xF002;   Bratislava'
+            placeholder='&#xF002;  Search....'
           />
           <button
             type='submit'

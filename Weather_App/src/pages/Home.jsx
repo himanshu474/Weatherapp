@@ -13,11 +13,14 @@ const Home = ({ theme }) => {
   const dispatch = useAppDispatch();
   const { weather } = useAppSelector((state) => state.weather);
   const { savedWeather } = useAppSelector((state) => state.saved);
+  
   const findWeather = savedWeather.find((el) => {
     if (el.name === (weather?.name)) {
       return true;
     }
-  });
+  }); 
+
+
   const searchHandler = useCallback(
     debounce((e) => {
       dispatch(getWeather(e));

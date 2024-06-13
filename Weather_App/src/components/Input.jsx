@@ -1,8 +1,8 @@
 import React from 'react';
 import { useAppSelector } from '../hooks/hooks';
 
-const Input = (props) => {
-  const { value, onChangeInput, theme } = props;
+const Input = ({value, onChangeInput, theme}) => {
+
   const { status } = useAppSelector((state) => state.weather);
 
   return (

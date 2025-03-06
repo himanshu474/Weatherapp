@@ -36,58 +36,61 @@ const Home = ({ theme }) => {
   );
   return (
     <main className={theme ? 'dark' : ''}>
-      <div className='text-gray-100  max-w-screen-xl mx-auto px-4 lg:px-6 flex flex-col items-center py-10'>
-        <Input theme={theme} value={value} onChangeInput={onChangeInput} />
+    <div className="max-w-screen-xl mx-auto px-4 lg:px-6 flex flex-col items-center py-10">
+      {/* Weather Icon */}
+      <img
+        className="h-40 mb-6"
+        src={getIcon(weather?.weather[0].id ? weather?.weather[0].id : 800)}
+        alt="Weather Icon"
+      />
+      
+      {/* Temperature */}
+      <span className="text-5xl text-black dark:text-black mb-6 font-bold flex items-center justify-center space-x-3">
         <img
-          className='h-40'
-          src={getIcon(weather?.weather[0].id ? weather?.weather[0].id : 800)}
-          alt=''
+          className="h-20"
+          src={getTempIcon(Math.ceil(weather?.main.temp ? weather.main.temp : 0))}
+          alt="Temperature Icon"
         />
-        <span className='text-5xl dark:text-gray text-gray-700 mb-5 font-bold flex items-center justify-center'>
-          <img
-            className='h-20 mr-3'
-            src={getTempIcon(
-              Math.ceil(weather?.main.temp ? weather.main.temp : 0)
-            )}
-            alt=''
-          />
-          {Math.ceil(weather?.main.temp ? weather.main.temp : 0)}°C
-        </span>
-        <span className='mb-5 font-semibold dark:text-gray text-gray-700'>
-          <span className='text-2xl '>{weather?.name}, </span>
-          <span className='uppercase text-2xl'>{weather?.sys.country}</span>
-        </span>
-        <ul className='flex flex-col sm:flex-row items-center mb-6 space-y-2 sm:space-y-0 dark:text-gray text-gray-700'>
-          <li className='sm:after:content-["•"] sm:after:mx-3 after:opacity-70'>
-            <span className='font-bold'>Feels like: </span>
-            <span>
-              {Math.ceil(
-                weather?.main.feels_like ? weather?.main.feels_like : 0
-              )}
-              °C
-            </span>
-          </li>
-          <li className=' sm:after:content-["•"] sm:after:mx-3 after:opacity-70'>
-            <span className='font-bold'>Humidity:</span>{' '}
-            <span>{weather?.main.humidity}%</span>
-          </li>
-          <li className=''>
-            <span className='font-bold'>Info:</span>{' '}
-            <span>{weather?.weather[0].main}</span>
-          </li>
-        </ul>
-        <button
-          className='
-            dark:text-white bg-gray-200 hover:bg-gray-300 text-gray-700 dark:hover:bg-[#0e48c5]
-            dark:bg-[#1956db] transition-all focus:ring-2 focus:ring-gray-400 font-medium rounded px-3 lg:px-4 py-1.5 lg:py-2 focus:outline-none ml-2'
-          onClick={() => {
-            dispatch(addWeather(weather?.name));
-          }}
-        >
-          <IsSaved weather={weather} />
-        </button>
-      </div>
-    </main>
+        <span>{Math.ceil(weather?.main.temp ? weather.main.temp : 0)}°C</span>
+      </span>
+      
+      {/* Location */}
+      <span className="text-xl mb-4 font-semibold text-black dark:text-black">
+        <span className="text-2xl">{weather?.name}, </span>
+        <span className="uppercase text-2xl">{weather?.sys.country}</span>
+      </span>
+      
+      {/* Weather Details */}
+      <ul className="flex flex-col sm:flex-row items-center mb-8 space-y-3 sm:space-y-0 sm:space-x-6 text-black dark:text-black">
+        <li className="flex items-center">
+          <span className="font-semibold mr-2">Feels like:</span>
+          <span>{Math.ceil(weather?.main.feels_like ? weather?.main.feels_like : 0)}°C</span>
+        </li>
+        <li className="flex items-center">
+          <span className="font-semibold mr-2">Humidity:</span>
+          <span>{weather?.main.humidity}%</span>
+        </li>
+        <li className="flex items-center">
+          <span className="font-semibold mr-2">Info:</span>
+          <span>{weather?.weather[0].main}</span>
+        </li>
+      </ul>
+      
+      {/* Save Button */}
+      <button
+        className="text-white bg-blue-600 hover:bg-blue-700 transition-all focus:ring-2 focus:ring-blue-400 font-medium rounded-lg px-4 py-2 focus:outline-none"
+        onClick={() => {
+          dispatch(addWeather(weather?.name));
+        }}
+      >
+        <IsSaved weather={weather} />
+      </button>
+    </div>
+  </main>
+  
+  
+  
+  
   );
 };
 

@@ -132,7 +132,7 @@ const Header = ({ theme, setTheme }) => {
                   </button>
                 </NavLink>
               </li>
-              <li className='py-2 dark:hover:text-[#1956db] hover:text-gray-900 w-full cursor-pointer transition-all'>
+              {/* <li className='py-2 dark:hover:text-[#1956db] hover:text-gray-900 w-full cursor-pointer transition-all'>
                 <NavLink
                   className='flex items-center space-x-2'
                   onClick={() => setBurger((prev) => !prev)}
@@ -143,7 +143,7 @@ const Header = ({ theme, setTheme }) => {
                     <span>Contact</span>
                   </button>
                 </NavLink>
-              </li>
+              </li> */}
             </ul>
           </div>
         )}

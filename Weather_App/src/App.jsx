@@ -33,7 +33,7 @@ const App = () => {
 
   return (
     <Routes>
-      <Route path='/' element={<Layout theme={theme} setTheme={setTheme} />}>
+      <Route path='*' element={<Layout theme={theme} setTheme={setTheme} />}>
         <Route
           index
           element={

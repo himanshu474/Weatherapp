@@ -9,78 +9,28 @@ import cloudy from "../assets/icons/fewclouds.svg";
 import brkclouds from "../assets/icons/brkclouds.svg";
 import overclouds from "../assets/icons/overclouds.svg";
 
-const drizzleW = {
-  drizzleI: [300, 301, 302, 310, 311, 312, 313, 314, 321],
-  icon: drizzle,
-};
-
-const thunderstormW = {
-  thunderstormI: [200, 201, 202, 210, 211, 212, 221, 230, 231, 232],
-  icon: thunderstorm,
-};
-
-const rainW = {
-  rainI: [500, 501, 502, 504, 511, 520, 521, 522, 531],
-  icon: rain,
-};
-
-const snowW = {
-  snowI: [600, 601, 602, 611, 612, 613, 615, 616, 620, 621, 622],
-  icon: snow,
-};
-
-const atmosphereW = {
-  atmosphereI: [701, 711, 721, 731, 741, 751, 761, 762, 771, 781],
-  icon: atmosphere,
-};
-
-const clearW = {
-  clearI: [800],
-  icon: clear,
-};
-
-const fewcloudsW = {
-  fewcloudsI: [801],
-  icon: fewclouds,
-};
-
-const cloudsW = {
-  cloudsI: [802],
-  icon: cloudy,
-};
-
-const brkcloudsW = {
-  brkcloudsI: [803],
-  icon: brkclouds,
-};
-
-const overcloudsW = {
-  overcloudsI: [804],
-  icon: overclouds,
+const weatherConditions = {
+  drizzle: { codes: [300, 301, 302, 310, 311, 312, 313, 314, 321], icon: drizzle },
+  thunderstorm: { codes: [200, 201, 202, 210, 211, 212, 221, 230, 231, 232], icon: thunderstorm },
+  rain: { codes: [500, 501, 502, 504, 511, 520, 521, 522, 531], icon: rain },
+  snow: { codes: [600, 601, 602, 611, 612, 613, 615, 616, 620, 621, 622], icon: snow },
+  atmosphere: { codes: [701, 711, 721, 731, 741, 751, 761, 762, 771, 781], icon: atmosphere },
+  clear: { codes: [800], icon: clear },
+  fewclouds: { codes: [801], icon: fewclouds },
+  clouds: { codes: [802], icon: cloudy },
+  brkclouds: { codes: [803], icon: brkclouds },
+  overclouds: { codes: [804], icon: overclouds },
 };
 
 const getIcon = (id) => {
-  if (thunderstormW.thunderstormI.includes(id)) {
-    return thunderstormW.icon;
-  } else if (drizzleW.drizzleI.includes(id)) {
-    return drizzleW.icon;
-  } else if (rainW.rainI.includes(id)) {
-    return rainW.icon;
-  } else if (snowW.snowI.includes(id)) {
-    return snowW.icon;
-  } else if (atmosphereW.atmosphereI.includes(id)) {
-    return atmosphereW.icon;
-  } else if (clearW.clearI.includes(id)) {
-    return clearW.icon;
-  } else if (fewcloudsW.fewcloudsI.includes(id)) {
-    return fewcloudsW.icon;
-  } else if (cloudsW.cloudsI.includes(id)) {
-    return cloudsW.icon;
-  } else if (brkcloudsW.brkcloudsI.includes(id)) {
-    return brkcloudsW.icon;
-  } else if (overcloudsW.overcloudsI.includes(id)) {
-    return overcloudsW.icon;
+  for (const condition in weatherConditions) {
+    if (weatherConditions[condition].codes.includes(id)) {
+      return weatherConditions[condition].icon;
+    }
   }
+  // Fallback for unknown IDs (optional)
+  return null;
 };
+
 
 export default getIcon;
